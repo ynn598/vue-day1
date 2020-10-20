@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <h1>{{user.name}}</h1>
+    <br>
+    <h1>{{arr[0]}}</h1><br>
+    <h1>{{users[0]}}</h1>
+<!--    遍历-->
+    <span v-for="(value,key,index) in user">
+        {{index}}++++++{{key}}:{{value}}<br>
+    </span>
+
+    <ul>
+        <li v-for="(value,index) in arr">{{value}},{{index}}</li>
+    </ul>
+
+    <ul>
+        <li v-for="(value,index,key) in users">
+            {{index+1}}-----{{value.name}}:{{value.age}}:{{value.gender}}
+        </li>
+    </ul>
+</div>
+
+<script src="js/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            user:{name:"zz",age:18,gender:"male"},
+            arr:["太原","长治","晋城"],
+            users:[{name:"zz",age:18,gender:"female"},{name:"llo",age:28,gender:"male"}]
+        },
+    })
+</script>
+
+</body>
+</html>

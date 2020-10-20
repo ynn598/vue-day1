@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+
+<div id="app">
+    <h1>age: {{age}}</h1>
+<!--    <input type="button" value="我想快快长大" v-on:click="change_age">-->
+<!--    事件的简化写法-->
+    <input type="button" value="我想快快长大" @click="change_age">
+    <input type="button" value="我不想我不想长大....." @click="young">
+<!-- 参数的传递 -->
+    <br>{{num}}
+    <input type="button" @click="check_me(99,event)" value="点我" >
+</div>
+
+<script src="js/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            age:18,
+            num:1000,
+        },
+        methods:{
+            //  年龄增长
+            change_age:function (){
+                // console.log(this)
+                // console.log(this.age)
+                this.age++
+            },
+            //事件函数的简化写法
+            young(){
+                this.age--
+            },
+            check_me(num,event){
+                this.num=num
+                console.log(event)
+            },
+        }
+    })
+</script>
+
+</body>
+</html>

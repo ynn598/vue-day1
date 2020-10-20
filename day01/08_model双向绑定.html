@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--model只能用于表单-->
+<!--输入框输入啥, 下面显示什么-->
+<div id="app">
+    <input type="text" v-model="msg">
+    <hr>
+    <span>{{msg}}</span>
+</div>
+
+<script src="js/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            msg:'',
+        },
+
+
+    })
+</script>
+
+</body>
+</html>

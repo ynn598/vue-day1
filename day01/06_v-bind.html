@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    .aa{
+        border: blueviolet solid 5px;
+    }
+    </style>
+</head>
+<body>
+
+<div id="app">
+<!--    <img style="width: 500px" src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1603202032&di=c8e549884d7f559a500144f7466f9ed7&src=http://a0.att.hudong.com/70/91/01300000261284122542917592865.jpg"-->
+<!--         title="tiger">-->
+    <img v-bind:src="src" :title="title"  class="aa">
+    <input type="button" value="change_style" @click="change_style">
+    <input type="button" value="change_pic" @click="change_pic">
+
+</div>
+
+<script src="js/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            title:"dog",
+            src:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603213313295&di=173ebc800d6dc1344086a509aa1116e5&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180524%2F2fb340b300d44e1d8056f153491e887c.jpeg',
+            css1:true,
+        },
+        methods:{
+            change_pic(){
+                this.src='https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1593106255,4245861836&fm=26&gp=0.jpg'
+                this.title='tiger'
+            },
+            change_style(){
+                this.css1 = !this.css1
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

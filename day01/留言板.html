@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+</head>
+<body>
+
+<div id="app">
+
+    <input type="text" v-model="msg">
+    <input type="button" value="发表留言" @click="add_note">
+
+    <ul>
+        <li v-for="(note, index) in notebook" :key="index">
+            <span>{{note}}</span> <a href="javascript:void(0);" @click="delNote(index,notebook.length)">删除</a>
+            <hr>
+        </li>
+    </ul>
+
+    <span>留言总数量：{{notebook.length}}条</span>
+    <br>
+    <input id="delete" type="button" value="删除所有" @click="delete_all(notebook.length)" v-show="is_show">
+
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            notebook: ["Vue真好用", "我特别想听毛老师讲课"],
+            msg: "",
+            is_show:true,
+        },
+        methods: {
+            // 添加留言
+            add_note() {
+                // 判断输入框是否有值  有值则添加
+                let msg = this.msg;
+                if (msg) {
+                    // 默认添加到留言板的末尾
+                    // this.notebook.push(this.msg);
+                    // 添加到留言板的首部
+                    this.notebook.unshift(this.msg);
+                    this.msg = "";
+                }
+            },
+
+            // 删除留言
+            delNote(index,sum){
+                console.log(index);
+                // 根据下标取删除某个元素
+                if(sum==1){
+                    this.is_show=!this.is_show
+                    this.notebook.splice(index, 1)
+                }
+                else {
+                    this.notebook.splice(index, 1)  // 参数1: 从哪个下标开始删除  参数2: 删除的元素个数
+                }
+            },
+            delete_all(sum){
+                if(sum != 0){
+                    this.notebook.splice(0,sum)
+                    this.is_show = !this.is_show;
+                }
+
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

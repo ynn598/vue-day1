@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    {{message}}
+    我是一个粉刷匠,你的主人!
+</div>
+
+<!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+<script src="js/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            message:"你好, vue, 这是第一个vue实例",
+        },
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    {{message}}<br>
+    {{person.name}} 的年龄是: {{person.age}},
+    <br>是一个{{person.sex}}孩子
+    <hr>
+    学科: {{arr[0]}}
+    <hr>
+    {{haha[1].name}}
+<!--    转化为大写-->
+    {{message.toUpperCase()}}
+</div>
+
+<script src="js/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            //字符串
+            message:"hello vue",
+            // 对象
+            person:{name:"皮皮",sex:"男",age:18},
+            //数组
+            arr:['语文','英语','音乐','体育'],
+            //组合
+            haha:[{name:"皮皮",sex:"男",age:18},{name:"皮妹",sex:"女",age:20}]
+
+        },
+    })
+</script>
+
+</body>
+</html>

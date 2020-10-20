@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <span v-show="is_show">{{message}}</span>
+<!--    <span v-show="true">{{message}}</span>-->
+    {{message}}
+    <input v-show="is_show" type="button" value="闪烁效果" @click="show">
+    <hr>
+    {{sum}}<br>
+    <span v-show="sum>30">大于30才显示</span>
+    <input type="button" value="add" @click="add_sum">
+    <input type="button" value="multiply" @click="mul_sum">
+
+
+<!--    v-if   -->
+    <h1 v-if="is_if">你好</h1>
+    <h1 v-else>我不好</h1>
+</div>
+
+<script src="js/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            message:"应该显示的内容",
+            is_show:true,
+            sum: 31,
+            // is_if: true,
+            is_if: false,
+        },
+        methods:{
+            show(){
+                this.is_show = !this.is_show;
+            },
+            add_sum(){
+                this.sum++
+            },
+            mul_sum(){
+                this.sum--
+            },
+        }
+    })
+</script>
+
+</body>
+</html>

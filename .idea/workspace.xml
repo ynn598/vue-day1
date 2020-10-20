@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d99a0f0e-6159-4640-8c5c-d1cd32910142" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Unnamed" />
+        <option value="template598" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1j8nEP5VClzH19jXwcnn6xspA3W" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\百知培训\05 web开发\web\day01" />
+      <recent name="D:\百知培训\05 web开发\web" />
+      <recent name="D:\百知培训\05 web开发\web\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\百知培训\05 web开发\web" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d99a0f0e-6159-4640-8c5c-d1cd32910142" name="Default Changelist" comment="" />
+      <created>1603194474633</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603194474633</updated>
+      <workItem from="1603194475953" duration="11061000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TerminalProjectNonSharedOptionsProvider">
+    <option name="shellPath" value="C:\Program Files\Git\bin\bash.exe" />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="697" y="246" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603195258181">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="697" y="246" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1603195258181" />
+    <state x="751" y="186" key="FileChooserDialogImpl" timestamp="1603205914822">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="751" y="186" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603205914822" />
+    <state x="472" y="90" key="SettingsEditor" timestamp="1603205915963">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="472" y="90" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603205915963" />
+    <state x="716" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1603201508029">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="716" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1603201508029" />
+  </component>
+</project>

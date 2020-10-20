@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+v-text与插值
+都是用来取值,
+v-text: 会发生覆盖, 避免插值闪烁;
+插值: 不会覆盖, 但会有插值闪烁;
+-->
+
+<div id="app">
+<!--      网络慢的时候,会有插值闪烁-->
+    <span>{{ msg }}嗯哼</span>
+
+    <!--  v-text用来获取数据并渲染到指定标签内部,
+          覆盖标签中原有的值 -->
+    <span v-text="msg"></span>
+
+
+<!--
+v-html
+将字符串转为连接再显示
+-->
+    <hr>
+    百知教育的连接: {{link}}
+    <br>
+    <span v-html="link"></span>
+</div>
+
+<script src="js/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            msg:"我是一只v-text......",
+            link:"<a href=''>柏芝</a>",
+        },
+    })
+</script>
+
+</body>
+</html>
