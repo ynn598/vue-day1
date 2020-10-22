@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+<!--<first></first>-->
+<!--    <second></second>-->
+
+<!--  因为除开发者外, 其他人不知道路由地址  -->
+<router-link to="/first">进入第一个组件</router-link> |
+<router-link to="/second">进入第二个组件</router-link>
+
+<!--    指定路由出现的位置 -->
+    <router-view></router-view>
+</div>
+<!-- vue的路由是由多个组件组成的  -->
+<script src="js/vue.min.js"></script>
+<script src="js/vue-router.3.0.1.js"></script>  <!--  依赖于vue.js才能使用  -->
+<script>
+    let first = {
+        template:`
+            <div>
+            <p>我是第一个组件</p>
+</div>
+        `,
+    }
+
+    let second = {
+        template: `
+            <div>
+            <p>我是第二个组件</p>
+</div>
+        `,
+    }
+
+    // 1. 为每个组件准备对应的路由
+    let myRouter = new VueRouter({
+        routes:[
+            {path:"/first",component:first},
+            {path:"/second",component: second},
+        ]
+    })
+
+    new Vue({
+        el: "#app",
+        data: {},
+        // components:{
+        //     "first":first,
+        //     "second":second,
+        // }
+
+        // 2.将定义好的二路由注入到当前的vue实例中
+        router:myRouter,
+    })
+</script>
+
+</body>
+</html>

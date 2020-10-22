@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+
+      <router-view></router-view>
+</div>
+
+<script src="js/vue.min.js"></script>
+<script src="js/vue-router.3.0.1.js"></script>
+<script>
+    let first = {
+        template:`
+        <div>
+        第一个组件
+        <router-link to="/second?id=1">反反复复</router-link>
+</div>
+        `,
+    }
+
+    let second = {
+        template: `
+            <div>
+            第二个组件
+            {{$route.query.id}}
+</div>
+        `,
+    }
+
+    myRouter = new VueRouter({
+        routes:[
+            {path:"/first",component:first},
+            {path:"/second",component:second},
+        ]
+    })
+
+    new Vue({
+        el: "#app",
+        data: {},
+        router:myRouter,
+    })
+</script>
+
+</body>
+</html>
