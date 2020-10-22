@@ -7,9 +7,12 @@
 <body>
 
 <div id="app">
-    父标签: {{username}}
+    父组件的值 : {{username}}<br>
+    父亲的年龄: {{number}}
+    <input type="button"  @click="change_number" value="add">
 
-<son :class="username"></son>
+    <hr>
+<son :name="username" :father_age="number"></son>
 </div>
 
 <script src="js/vue.min.js"></script>
@@ -18,27 +21,38 @@
     let son={
         template:`
           <div>
-          hahaha
           1. 父组件向子组件传递数据的方式是在子组件的标签上绑定一个属性 :任意属性名="父组件的变量"<br>
           2. 父组件传递的值可以在子组件内部通过props接收 <br>
           3. 尽量不要在子组件的内部修改来自于父组件的值  <br>
-          {{age}}
+          <hr>
+          子组件, 你好, 我是你的{{name}}, 我今年{{age}}了<br>
+          爸爸你好, 我是你的{{username}}
+          我父亲今年{{father_age}}
           </div>
         `,
+        props:["name",'father_age'],
         data:function (){
             return{
                 age:18,
-                username:"son ",
+                username:"儿子",
             }
         }
     }
+
+    //父亲
     new Vue({
         el: "#app",
         data: {
-            username:"dad",
+            username:"爸爸",
+            number :'56',
         },
         components:{
             "son":son,
+        },
+        methods:{
+            change_number(){
+                this.number++
+            }
         }
     })
 </script>
