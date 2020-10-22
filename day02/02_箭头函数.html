@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+
+</div>
+
+<script src="js/vue.min.js"></script>
+
+<script>
+
+   //正常函数
+   function add(a){
+       console.log(a + 3);
+   }
+   // 1.
+   add(3)
+
+    //匿名函数
+   let add1 = function (a){
+       console.log(a + 2);
+   }
+   add1(3)   //2.
+
+    //箭头函数
+   //在回调函数使用箭头函数时, 不会改变原this的指向
+
+   //函数内部只有一条语句的时候, 只需要写=>即可
+   let add2 = (a) => console.log(a+3)
+   add2(2)   //3.
+    //函数内部语句超过一句时, 需要加{}
+   let add3 = (a,b) =>{
+       var sum = a+b
+       console.log(sum);
+   }
+    add3(6,6)     //4.
+
+    //5. this指向1
+   let user1 = {
+       username:'xixi',
+       add:function (){
+           console.log("该用户的名字为: ",this.username);
+       }
+   }
+   user1.add()
+
+    //6. 箭头函数在回调函数中的使用
+    //6.1 回调函数--若不使用箭头函数
+   let user2 = {
+       username: 'hehe',
+       add:function (){
+           setTimeout(function (){
+               console.log("回调函数不使用箭头函数:",this.username)
+           })
+       }
+   }
+   user2.add()
+
+   let user3 = {
+       username:"enen",
+       add:function (){
+           setTimeout( () =>{
+             console.log("回调函数使用箭头函数: ",this.username)
+           })
+       }
+   }
+   user3.add()
+
+    new Vue({
+        el: "#app",
+        data: {},
+    })
+</script>
+
+</body>
+</html>

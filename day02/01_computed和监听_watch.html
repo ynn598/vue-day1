@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<!--       computed和watch的区别      -->
+<!--      computed                      监听事件watch           -->
+<!--  1.  多个变量发生变化               只有一个变量发生变化          -->
+<!--  2.  声明的方法属性不能在data中定义  监听的是data中已存在的变量的变化-->
+<!--  3.  需要有返回值                   不需要有返回值-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+<!--  1. computed声明的是方法属性, 就是使用方法时就和属性使用一样
+        但computed生命的变量不可与data中的一样
+        多个变量发生改变时, 使用
+       正常写法会显得代码冗余, 因此, 要将这些用于运算的代码写在vue中
+ -->
+    <p @click="low_num">{{num}}</p>
+    <p>十位: {{parseInt(num/10)}}</p>
+    <p>个位: {{num%10}}</p>
+
+<!--    使用computed  -->
+    <hr>
+    <p>{{result}}</p>
+    十位:  <input type="text" v-model="tens_place">
+<!--    个位:  <input type="text" v-model="ones_place">-->
+<!--    如果只想实现两位数, 想限制输入框中的位数, 如下所示: -->
+    个位:  <input type="number" v-model="ones_place" max="9" min="0">
+
+<!--    2. 监听事件-->
+<!--    监听事件就是只有一个变量发生变化, 多个变量依赖一个变量发生变化-->
+    <hr> 监听事件
+    <p v-model="sum" @click="add_num">{{sum}}</p>
+    shiwei: <p >{{shi_num}}</p>
+    gewei: <p >{{ge_num}}</p>
+</div>
+
+<script src="js/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            num:99,
+            tens_place:'',
+            ones_place:'',
+            sum:100,
+            ge_num:'',
+            shi_num:'',
+        },
+        methods:{
+            low_num(){
+                this.num--
+            },
+            add_num(){
+                this.sum++
+            },
+        },
+
+        computed:{
+            result(){
+                // return this.tens_place*10+ this.ones_place
+// 如果使用上面的方法计算, 得到的结果个位并没有真正的加进去, 需要将在个位数前加一个+号, 才是算术中的加法
+                return this.tens_place*10  + +this.ones_place
+             },
+        },
+
+        watch:{
+            sum(){
+                this.ge_num=parseInt(this.sum/10)
+                this.shi_num=this.sum%10
+                console.log(this.ge_num);
+                console.log(this.shi_num);
+            }
+        },
+    })
+</script>
+
+</body>
+</html>

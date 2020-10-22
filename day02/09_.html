@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    父标签: {{username}}
+
+<son :class="username"></son>
+</div>
+
+<script src="js/vue.min.js"></script>
+
+<script>
+    let son={
+        template:`
+          <div>
+          hahaha
+          1. 父组件向子组件传递数据的方式是在子组件的标签上绑定一个属性 :任意属性名="父组件的变量"<br>
+          2. 父组件传递的值可以在子组件内部通过props接收 <br>
+          3. 尽量不要在子组件的内部修改来自于父组件的值  <br>
+          {{age}}
+          </div>
+        `,
+        data:function (){
+            return{
+                age:18,
+                username:"son ",
+            }
+        }
+    }
+    new Vue({
+        el: "#app",
+        data: {
+            username:"dad",
+        },
+        components:{
+            "son":son,
+        }
+    })
+</script>
+
+</body>
+</html>

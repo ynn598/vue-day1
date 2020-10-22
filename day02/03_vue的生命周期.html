@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p id="p">这可能不一定是一个p标签吧!!</p>
+    <p @click="click_me" id="change">pick me: {{number}}</p>
+</div>
+
+<script src="js/vue.min.js"></script>
+
+<script>
+
+    new Vue({
+        //声明变量
+        el: "#app",
+        data: {
+            number:50,
+        },
+        methods:{
+            click_me(){
+                this.number += 10
+            }
+        },
+
+        // 1. 第一个钩子, 仅完成了自身事件的绑定以及生命周期的初始化
+        beforeCreate:function (){
+            console.log("创建前: ",this.number);// 创建前:  undefined
+        },
+
+        // 2. 已经初始化了data和methods等方法
+        created:function (){
+            console.log("创建完成: ",this.number)// 创建完成:  50
+        },
+
+        // 3. 在el作用范围进行编译
+        beforeMount:function (){
+            console.log("挂载前: ", document.getElementById('app').innerText)
+        },
+        // 4.
+        mounted:function (){
+            console.log("挂载完: ",document.getElementById('app').innerText)
+        },
+
+        // 5. 慢, 数据未同步
+        beforeUpdate:function (){
+            console.log("更新前: ",this.number,document.getElementById('change').innerText)
+
+        },
+        // 6. 数据一致
+        updated:function (){
+            console.log("更新完成: ",this.number,document.getElementById('change').innerText)
+
+        },
+
+        // 7.指的是data 和methods
+        beforeDestroy:function (){
+            console.log("销毁前: ",this.number)
+        },
+        // 8.
+        destroyed:function (){
+            console.log("销毁完成: ",this.number)
+        },
+
+
+    })
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <all></all>
+</div>
+
+<script src="js/vue.min.js"></script>
+<!--  步骤   -->
+<!--  1. 定义-->
+<!--  2. 注册-->
+<!--  3. 渲染-->
+
+
+<script>
+
+    // 组件中的data是一个函数, 与一般的data除定义方式外, 使用都一样
+
+    let all = {
+        template:`
+            <table style="border: 1px red solid">
+            <tr>
+            <td>国家</td>
+            <td>人口</td>
+            <td>洲际</td>
+</tr>
+<tr>
+            <td>中国</td>
+            <td>13亿</td>
+            <td>亚洲</td>
+</tr>
+<tr>
+            <td>印度</td>
+            <td>未知</td>
+            <td>非洲</td>
+</tr>
+            <p>姓名: {{username}}</p>
+            <input type="button" value="我是一个按钮,请点我" @click="change">
+</table>
+
+        `,
+        data:function (){
+              return{
+                  username:'哈哈哈',
+              }
+        },
+        methods:{
+            change(){
+                alert(this.username)
+            }
+        }
+    }
+
+    // 2. 注册
+    Vue.component("all",all)
+
+    new Vue({
+        el: "#app",
+        data: {},
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aa{
+            color:red
+        }
+        .bb{
+            color:yellow;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+<son css="aa"></son>
+<son css="bb"></son>
+</div>
+
+<script src="js/vue.min.js"></script>
+
+<script>
+// props 用于组件之间传递数据
+    let son = {
+        template:`
+            <div>
+            <p :class="css">hahahahahaa</p>
+</div>
+        `,
+        props:["css"],
+    }
+    new Vue({
+        el: "#app",
+        data: {},
+        // 注册
+        components:{
+            "son":son,
+        }
+
+    })
+</script>
+
+</body>
+</html>

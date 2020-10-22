@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <son @bbt="father"></son>
+    <hr>
+    父组件中的username: {{username}}
+</div>
+
+<script src="js/vue.min.js"></script>
+
+<script>
+    // 子组件
+    let son = {
+        template: `
+            <div>
+              <input type="button" value="点我" @click="change">
+            </div>
+        `,
+        data:function (){
+            return{
+                username :'冥冥中'
+            }
+        },
+        methods:{
+            change(){
+                this.$emit("bbt",this.username)
+            }
+        },
+    }
+
+   // 父组件
+    new Vue({
+        el: "#app",
+        data: {
+            username:'xixi',
+        },
+        methods:{
+              father(username){
+                  this.username = username
+              },
+        },
+        // 注册
+        components:{
+            "son":son,
+        }
+    })
+</script>
+
+</body>
+</html>
