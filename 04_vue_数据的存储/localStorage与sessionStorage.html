@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>localStorage 与 sessionStorage 之间的区别</title>
+</head>
+<body>
+
+<div id="app">
+
+</div>
+
+
+<script>
+    //sessionStorage 和 localStorage 在使用上是相同的,
+    //  他们的区别为:
+    // 1. 他们的存活周期不同, sessionStorage是一个会话, localStorage 得用户自己去删除
+    // 2. 他们存储的数据量不同, localStorage 能存储2-5MB, 而sessionStorage只能存储 4KB的数据
+
+
+    // 存储的方式
+    // 存储方式一 :
+    localStorage.name = "杨宁宁";
+    localStorage.age = 18;
+    // 存储方式二:
+    localStorage['username'] = '小黄狗'
+    // 存储方式三 :
+    localStorage.setItem('birthday', '2020.1.1')
+
+
+    // 获取方式一 :
+    console.log('username: ', localStorage['username'])
+    // 获取方式二 :
+    console.log('name: ', localStorage.name)
+    console.log('age: ', localStorage.age)
+    // 获取方式三 :
+    console.log('birthday', localStorage.getItem('birthday'))
+
+
+    // 删除指定的键值
+    localStorage.removeItem('name')
+    console.log('删除后显示的name的名字: ', localStorage.getItem('name'))
+
+    //遍历数据
+    sessionStorage.setItem('id01', '01')
+    sessionStorage.setItem('id02', '02')
+    sessionStorage.setItem('id03', '03')
+    for (let n = 0; n < sessionStorage.length; n++) {
+        console.log('n',n)
+        key = sessionStorage.key(n)     //输出键值
+        console.log('sessionStorage中第' + n + "个数据键"+key+"为" + sessionStorage[key]);
+    }
+
+    //删除所有
+    sessionStorage.clear()
+    console.log("id01: ",sessionStorage.id01)
+
+    //对象的存取
+    // 因为sessionStorage 和 localStorage 只能以文本形式保存到浏览器,
+    // 所以对于对象的存储,涉及到序列化和反序列化
+
+    // 给localStorage重命名, 是为了之后可以直接将这个换成sessionStorage进行sessionStorage的存储
+    let local = localStorage
+    local.name = "小胖胖"
+    console.log(typeof local.name)   // 可用此方法输出变量类型的类型
+
+    let student = {
+        id:1,
+        name:'莉莉安',
+        age:18,
+    }
+    // 将对象序列化存储
+    local.stu = JSON.stringify(student)
+    // 反序列化将数据取出来
+    stu2 = JSON.parse(local.stu)
+    console.log(stu2.age)
+
+</script>
+
+</body>
+</html>
