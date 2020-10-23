@@ -21,9 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d99a0f0e-6159-4640-8c5c-d1cd32910142" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/09_.html" beforeDir="false" afterPath="$PROJECT_DIR$/day02/09_.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day3/01_计算computed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/day3/js/vue.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_vue_day03/01_初始路由.html" beforeDir="false" afterPath="$PROJECT_DIR$/03_vue_day03/01_初始路由.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_vue_day03/02_路由的应用.html" beforeDir="false" afterPath="$PROJECT_DIR$/03_vue_day03/02_路由的应用.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_vue_day03/03_路由的拼接参数传递.html" beforeDir="false" afterPath="$PROJECT_DIR$/03_vue_day03/03_路由的拼接参数传递.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_vue_day03/04_动态路由传参.html" beforeDir="false" afterPath="$PROJECT_DIR$/03_vue_day03/04_动态路由传参.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_vue_day03/05_js跳转传参.html" beforeDir="false" afterPath="$PROJECT_DIR$/03_vue_day03/05_js跳转传参.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +45,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1j8nEP5VClzH19jXwcnn6xspA3W" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -51,9 +56,9 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/day02" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/03_vue_day03/js" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -64,6 +69,8 @@
       <recent name="D:\百知培训\05 web开发\web\js" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\百知培训\05 web开发\web_homework\03_vue_day03\js" />
+      <recent name="D:\百知培训\05 web开发\web_homework\03_vue_day03" />
       <recent name="D:\百知培训\05 web开发\web_homework\day02" />
       <recent name="D:\百知培训\05 web开发\web\day02" />
       <recent name="D:\百知培训\05 web开发\web" />
@@ -79,7 +86,7 @@
       <updated>1603194474633</updated>
       <workItem from="1603194475953" duration="12165000" />
       <workItem from="1603264232891" duration="3136000" />
-      <workItem from="1603329503578" duration="4455000" />
+      <workItem from="1603329503578" duration="14064000" />
     </task>
     <servers />
   </component>
@@ -110,13 +117,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="751" y="186" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603205914822" />
-    <state x="472" y="90" key="SettingsEditor" timestamp="1603205915963">
+    <state x="472" y="90" key="SettingsEditor" timestamp="1603368665731">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="472" y="90" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603205915963" />
+    <state x="472" y="90" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603368665731" />
     <state x="716" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1603201508029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="716" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1603201508029" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/03_vue_day03/02_路由的应用.html</url>
+          <line>42</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

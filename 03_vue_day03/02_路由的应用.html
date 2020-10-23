@@ -7,15 +7,68 @@
 <body>
 
 <div id="app">
-
+    <h2> 学校系统管理 </h2>
+    <router-link to="/index">首页</router-link>
+    <br>
+    <router-link to="/user">用户界面</router-link>
+    <router-view></router-view>
 </div>
 
 <script src="js/vue.min.js"></script>
-
+<script src="js/vue-router.3.0.1.js"></script>
 <script>
+    let index = {
+        template:`
+            <div>
+            <h3>欢迎登录学生信息管理系统</h3>
+            <br>您可点击 "用户界面" 进入学生系统
+
+</div>
+        `,
+    }
+
+    let user = {
+        template:`
+        <div>
+            <table border="2px">
+                <tr>
+                    <th>学号id</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                </tr>
+                <tr v-for="student in user"  :key=student.index>
+                    <td>{{student.id}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.age}}</td>
+                </tr>
+            </table>
+        </div>
+        `,
+        data(){
+            return{
+                user:[
+                    {id:'001',name:"嘟嘟",age:18},
+                    {id:'002',name:"mimi",age:24},
+                    {id:'003',name:"琪琪",age:16},
+                    {id:'004',name:"咪咪",age:30},
+                ]
+            }
+    }
+    }
+
+    myRouter = new VueRouter({
+        routes: [
+            {path:"/index",component:index},
+            {path:"/user",component:user},
+            {path:"/*",redirect:"/index"},
+
+        ]
+    })
+
     new Vue({
-        el:"#app",
-        data:{},
+        el: "#app",
+        data: {},
+        router:myRouter,
     })
 </script>
 
