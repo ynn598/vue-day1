@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <son></son>
+    <sec></sec>
+</div>
+
+<script src="js/vue.min.js"></script>
+<script src="js/vuex.3.0.1.js"></script>
+
+<script>
+    let son = {
+        template:`
+            <div>
+                第一个组件
+                <input @click="add_num" value="加1" type="button">
+</div>
+        `,
+        methods:{
+            add_num(){
+                this.$store.commit("add")
+            }
+        }
+    }
+
+    let sec = {
+        template: `
+        <div>
+         第二个组件
+         <br>
+         点击组件1的按钮, 改变组件2的值{{$store.state.number}}
+</div>
+        `
+    }
+
+    // 创建状态机
+    let myStore = new Vuex.Store({
+        state:{
+            number:0,
+        },
+        mutations:{
+             add:function (state){
+                 if(state.number<10){
+                     state.number++
+                 }
+
+             }
+        },
+    })
+
+    new Vue({
+        el: "#app",
+        data: {},
+        components:{
+            son:son,
+            sec:sec,
+        },
+        store:myStore,
+    })
+</script>
+
+</body>
+</html>
